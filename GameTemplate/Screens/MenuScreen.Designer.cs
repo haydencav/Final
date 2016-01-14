@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuScreen));
             this.exitButton = new System.Windows.Forms.Button();
             this.optionsButton = new System.Windows.Forms.Button();
             this.scoresButton = new System.Windows.Forms.Button();
             this.playButton = new System.Windows.Forms.Button();
             this.gameTitle = new System.Windows.Forms.Label();
-            this.instructionButton = new System.Windows.Forms.Button();
+            this.howtoButton = new System.Windows.Forms.Button();
+            this.logoBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
             this.SuspendLayout();
             // 
             // exitButton
@@ -41,9 +44,11 @@
             this.exitButton.BackColor = System.Drawing.Color.White;
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitButton.Location = new System.Drawing.Point(146, 348);
+            this.exitButton.ForeColor = System.Drawing.Color.Red;
+            this.exitButton.Location = new System.Drawing.Point(155, 250);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(2);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(180, 60);
+            this.exitButton.Size = new System.Drawing.Size(120, 40);
             this.exitButton.TabIndex = 10;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = false;
@@ -53,9 +58,10 @@
             // 
             this.optionsButton.BackColor = System.Drawing.Color.White;
             this.optionsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.optionsButton.Location = new System.Drawing.Point(146, 281);
+            this.optionsButton.Location = new System.Drawing.Point(32, 249);
+            this.optionsButton.Margin = new System.Windows.Forms.Padding(2);
             this.optionsButton.Name = "optionsButton";
-            this.optionsButton.Size = new System.Drawing.Size(180, 60);
+            this.optionsButton.Size = new System.Drawing.Size(79, 27);
             this.optionsButton.TabIndex = 9;
             this.optionsButton.Tag = "OptionsScreen";
             this.optionsButton.Text = "Options";
@@ -66,9 +72,10 @@
             // 
             this.scoresButton.BackColor = System.Drawing.Color.White;
             this.scoresButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.scoresButton.Location = new System.Drawing.Point(146, 214);
+            this.scoresButton.Location = new System.Drawing.Point(32, 220);
+            this.scoresButton.Margin = new System.Windows.Forms.Padding(2);
             this.scoresButton.Name = "scoresButton";
-            this.scoresButton.Size = new System.Drawing.Size(180, 60);
+            this.scoresButton.Size = new System.Drawing.Size(79, 26);
             this.scoresButton.TabIndex = 8;
             this.scoresButton.Tag = "ScoreScreen";
             this.scoresButton.Text = "High Scores";
@@ -77,13 +84,16 @@
             // 
             // playButton
             // 
-            this.playButton.BackColor = System.Drawing.Color.Tomato;
-            this.playButton.Location = new System.Drawing.Point(146, 83);
+            this.playButton.BackColor = System.Drawing.Color.Gainsboro;
+            this.playButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.playButton.ForeColor = System.Drawing.Color.DarkGreen;
+            this.playButton.Location = new System.Drawing.Point(155, 163);
+            this.playButton.Margin = new System.Windows.Forms.Padding(2);
             this.playButton.Name = "playButton";
-            this.playButton.Size = new System.Drawing.Size(180, 60);
+            this.playButton.Size = new System.Drawing.Size(120, 39);
             this.playButton.TabIndex = 6;
             this.playButton.Tag = "GameScreen";
-            this.playButton.Text = "Play";
+            this.playButton.Text = "Green to Start ";
             this.playButton.UseVisualStyleBackColor = false;
             this.playButton.Click += new System.EventHandler(this.playButton_Click);
             // 
@@ -92,38 +102,53 @@
             this.gameTitle.AutoSize = true;
             this.gameTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gameTitle.ForeColor = System.Drawing.Color.White;
-            this.gameTitle.Location = new System.Drawing.Point(192, 42);
+            this.gameTitle.Location = new System.Drawing.Point(116, 136);
+            this.gameTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gameTitle.Name = "gameTitle";
-            this.gameTitle.Size = new System.Drawing.Size(150, 38);
+            this.gameTitle.Size = new System.Drawing.Size(182, 25);
             this.gameTitle.TabIndex = 5;
-            this.gameTitle.Text = "Game Title";
+            this.gameTitle.Text = "Tankers Image Here ";
             // 
-            // instructionButton
+            // howtoButton
             // 
-            this.instructionButton.BackColor = System.Drawing.Color.White;
-            this.instructionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.instructionButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.instructionButton.Location = new System.Drawing.Point(146, 148);
-            this.instructionButton.Name = "instructionButton";
-            this.instructionButton.Size = new System.Drawing.Size(180, 60);
-            this.instructionButton.TabIndex = 7;
-            this.instructionButton.Text = "How To Play";
-            this.instructionButton.UseVisualStyleBackColor = false;
-            this.instructionButton.Click += new System.EventHandler(this.instructionButton_Click);
+            this.howtoButton.BackColor = System.Drawing.Color.Gainsboro;
+            this.howtoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.howtoButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.howtoButton.ForeColor = System.Drawing.Color.DarkGreen;
+            this.howtoButton.Location = new System.Drawing.Point(155, 206);
+            this.howtoButton.Margin = new System.Windows.Forms.Padding(2);
+            this.howtoButton.Name = "howtoButton";
+            this.howtoButton.Size = new System.Drawing.Size(120, 40);
+            this.howtoButton.TabIndex = 7;
+            this.howtoButton.Text = "How To Play";
+            this.howtoButton.UseVisualStyleBackColor = false;
+            this.howtoButton.Click += new System.EventHandler(this.instructionButton_Click);
+            // 
+            // logoBox
+            // 
+            this.logoBox.Location = new System.Drawing.Point(11, 85);
+            this.logoBox.Name = "logoBox";
+            this.logoBox.Size = new System.Drawing.Size(100, 101);
+            this.logoBox.TabIndex = 11;
+            this.logoBox.TabStop = false;
             // 
             // MenuScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
-            this.Controls.Add(this.instructionButton);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.Controls.Add(this.logoBox);
+            this.Controls.Add(this.howtoButton);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.optionsButton);
             this.Controls.Add(this.scoresButton);
             this.Controls.Add(this.playButton);
             this.Controls.Add(this.gameTitle);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MenuScreen";
-            this.Size = new System.Drawing.Size(482, 455);
+            this.Size = new System.Drawing.Size(326, 312);
+            ((System.ComponentModel.ISupportInitialize)(this.logoBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,6 +161,7 @@
         private System.Windows.Forms.Button scoresButton;
         private System.Windows.Forms.Button playButton;
         private System.Windows.Forms.Label gameTitle;
-        private System.Windows.Forms.Button instructionButton;
+        private System.Windows.Forms.Button howtoButton;
+        private System.Windows.Forms.PictureBox logoBox;
     }
 }
