@@ -247,6 +247,7 @@ namespace GameTemplate.Screens
         {
             //draw rectangle to screen
             e.Graphics.FillRectangle(heroBrush, drawX, drawY, 20, 20);
+           // e.Graphics.DrawImage(Properties.Resources.pic, drawX, drawY, 20, 20);
         }
     }
 }
