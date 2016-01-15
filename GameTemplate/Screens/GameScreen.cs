@@ -16,6 +16,7 @@ namespace GameTemplate.Screens
         public GameScreen()
         {
             InitializeComponent();
+            tank = Properties.Resources.tank;
         }
 
         #region required global values - DO NOT CHANGE
@@ -30,6 +31,8 @@ namespace GameTemplate.Screens
 
         //TODO - Place game global variables here
         //---------------------------------------
+
+        Image tank;
 
         //initial starting points for black rectangle
         int drawX = 100;
@@ -53,6 +56,8 @@ namespace GameTemplate.Screens
             {
                 case Keys.Left:
                     leftArrowDown = true;
+                    tank.RotateFlip(RotateFlipType.Rotate270FlipXY);
+                    //tank = Properties.Resources.tankLeft;
                     break;
                 case Keys.Down:
                     downArrowDown = true;
@@ -117,6 +122,7 @@ namespace GameTemplate.Screens
             {
                 case Keys.Left:
                     leftArrowDown = false;
+
                     break;
                 case Keys.Down:
                     downArrowDown = false;
@@ -246,8 +252,8 @@ namespace GameTemplate.Screens
         private void GameScreen_Paint(object sender, PaintEventArgs e)
         {
             //draw rectangle to screen
-            e.Graphics.FillRectangle(heroBrush, drawX, drawY, 20, 20);
-           // e.Graphics.DrawImage(Properties.Resources.pic, drawX, drawY, 20, 20);
+            //e.Graphics.FillRectangle(heroBrush, drawX, drawY, 20, 20);
+           e.Graphics.DrawImage(tank, drawX, drawY, 50, 50);
         }
     }
 }
