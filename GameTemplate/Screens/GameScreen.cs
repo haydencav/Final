@@ -16,8 +16,8 @@ namespace GameTemplate.Screens
         public GameScreen()
         {
             InitializeComponent();
-            tank = Properties.Resources.tank;
-            tank2 = Properties.Resources.tank;
+            tank = Properties.Resources.TankBest_image;
+            tank2 = Properties.Resources.TankBest_image;
         }
 
         #region required global values - DO NOT CHANGE
