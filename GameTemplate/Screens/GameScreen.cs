@@ -16,6 +16,8 @@ namespace GameTemplate.Screens
         public GameScreen()
         {
             InitializeComponent();
+            tank = Properties.Resources.tank;
+            tank2 = Properties.Resources.tank;
         }
 
         #region required global values - DO NOT CHANGE
@@ -31,9 +33,15 @@ namespace GameTemplate.Screens
         //TODO - Place game global variables here
         //---------------------------------------
 
+        Image tank;
+        Image tank2;
+
         //initial starting points for black rectangle
         int drawX = 100;
         int drawY = 100;
+
+        int drawXX = 500;
+        int drawYY = 500; 
 
         //Graphics objects
         SolidBrush heroBrush = new SolidBrush(Color.Black);
@@ -53,6 +61,8 @@ namespace GameTemplate.Screens
             {
                 case Keys.Left:
                     leftArrowDown = true;
+                    
+                    //tank = Properties.Resources.tankLeft;
                     break;
                 case Keys.Down:
                     downArrowDown = true;
@@ -117,6 +127,7 @@ namespace GameTemplate.Screens
             {
                 case Keys.Left:
                     leftArrowDown = false;
+
                     break;
                 case Keys.Down:
                     downArrowDown = false;
@@ -201,12 +212,25 @@ namespace GameTemplate.Screens
                 drawY--;
             }
 
-            #endregion
+            //player 2 movements 
+            if (aDown == true)
+            {
+                drawXX--;
+            }
+            if (sDown == true)
+            {
+                drawYY++;
+            }
+            if (dDown == true)
+            {
+                drawXX++;
+            }
+            if (wDown == true)
+            {
+                drawYY--;
+            }
 
-            #region monster movements - TO BE COMPLETED
 
-
-            #endregion
 
             #region collision detection - TO BE COMPLETED
 
@@ -246,7 +270,10 @@ namespace GameTemplate.Screens
         private void GameScreen_Paint(object sender, PaintEventArgs e)
         {
             //draw rectangle to screen
-            e.Graphics.FillRectangle(heroBrush, drawX, drawY, 20, 20);
+            //e.Graphics.FillRectangle(heroBrush, drawX, drawY, 20, 20);
+           e.Graphics.DrawImage(tank, drawX, drawY, 50, 50);
+            e.Graphics.DrawImage(tank2, drawXX, drawYY, 50, 50); 
         }
     }
 }
+#endregion
