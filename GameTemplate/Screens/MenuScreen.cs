@@ -12,6 +12,7 @@ namespace GameTemplate.Screens
 {
     public partial class MenuScreen : UserControl
     {
+        //hello
         Color buttonBackColor = Color.White;
         Color buttonActiveColor = Color.Green;
 
@@ -38,7 +39,7 @@ namespace GameTemplate.Screens
 
         private void instructionButton_Click(object sender, EventArgs e)
         {
-            ScreenControl.changeScreen(this, "InstructionScreen");
+            ScreenControl.changeScreen(this, "InstructionScreen");            
         }
 
         private void scoresButton_Click(object sender, EventArgs e)

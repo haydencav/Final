@@ -41,7 +41,7 @@
             // 
             // exitButton
             // 
-            this.exitButton.BackColor = System.Drawing.Color.White;
+            this.exitButton.BackColor = System.Drawing.Color.Gainsboro;
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitButton.ForeColor = System.Drawing.Color.Red;
