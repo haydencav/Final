@@ -16,8 +16,8 @@ namespace GameTemplate.Screens
         public GameScreen()
         {
             InitializeComponent();
-            tank = Properties.Resources.TankBest_image;
-            tank2 = Properties.Resources.TankBest_image;
+            tank = Properties.Resources.Player1;
+            tank2 = Properties.Resources.Player2;
         }
 
         #region required global values - DO NOT CHANGE
@@ -62,16 +62,22 @@ namespace GameTemplate.Screens
                 case Keys.Left:
                     leftArrowDown = true;
                     
-                    //tank = Properties.Resources.tankLeft;
+                    tank = Properties.Resources.Player1_Left;
                     break;
                 case Keys.Down:
                     downArrowDown = true;
+
+                    tank = Properties.Resources.Player1_Down;
                     break;
                 case Keys.Right:
                     rightArrowDown = true;
+
+                    tank = Properties.Resources.Player1_Right;
                     break;
                 case Keys.Up:
                     upArrowDown = true;
+
+                    tank = Properties.Resources.Player1;
                     break;
                 case Keys.B:
                     bDown = true;
@@ -94,15 +100,23 @@ namespace GameTemplate.Screens
             {
                 case Keys.A:
                     aDown = true;
+
+                    tank2 = Properties.Resources.Player2_Left;
                     break;
                 case Keys.S:
                     sDown = true;
+
+                    tank2 = Properties.Resources.Player2_Down;
                     break;
                 case Keys.D:
                     dDown = true;
+
+                    tank2 = Properties.Resources.Player2_Right;
                     break;
                 case Keys.W:
                     wDown = true;
+
+                    tank2 = Properties.Resources.Player2;
                     break;
                 case Keys.C:
                     cDown = true;
