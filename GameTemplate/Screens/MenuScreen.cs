@@ -24,8 +24,8 @@ namespace GameTemplate.Screens
             defaultOverride();
             playButton.Location = new Point(ScreenControl.controlWidth / 2 - playButton.Size.Width / 2, 290);
             exitButton.Location = new Point(ScreenControl.controlWidth / 2 - playButton.Size.Width / 2, 390);
-            logoBox.Location = new Point(50, 150);
-            logoBox.Size = new Size(250, 250);
+            //logoBox.Location = new Point(50, 150);
+            //logoBox.Size = new Size(250, 250);
             gameTitle.Location = new Point(325, 150);
             howtoButton.Location = new Point(ScreenControl.controlWidth / 2 - playButton.Size.Width / 2, 340);
 

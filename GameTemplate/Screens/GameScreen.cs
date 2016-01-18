@@ -17,6 +17,7 @@ namespace GameTemplate.Screens
         {
             InitializeComponent();
             tank = Properties.Resources.tank;
+            tank2 = Properties.Resources.tank;
         }
 
         #region required global values - DO NOT CHANGE
@@ -33,10 +34,14 @@ namespace GameTemplate.Screens
         //---------------------------------------
 
         Image tank;
+        Image tank2;
 
         //initial starting points for black rectangle
         int drawX = 100;
         int drawY = 100;
+
+        int drawXX = 500;
+        int drawYY = 500; 
 
         //Graphics objects
         SolidBrush heroBrush = new SolidBrush(Color.Black);
@@ -56,7 +61,7 @@ namespace GameTemplate.Screens
             {
                 case Keys.Left:
                     leftArrowDown = true;
-                    tank.RotateFlip(RotateFlipType.Rotate270FlipXY);
+                    
                     //tank = Properties.Resources.tankLeft;
                     break;
                 case Keys.Down:
@@ -207,12 +212,25 @@ namespace GameTemplate.Screens
                 drawY--;
             }
 
-            #endregion
+            //player 2 movements 
+            if (aDown == true)
+            {
+                drawXX--;
+            }
+            if (sDown == true)
+            {
+                drawYY++;
+            }
+            if (dDown == true)
+            {
+                drawXX++;
+            }
+            if (wDown == true)
+            {
+                drawYY--;
+            }
 
-            #region monster movements - TO BE COMPLETED
 
-
-            #endregion
 
             #region collision detection - TO BE COMPLETED
 
@@ -254,6 +272,8 @@ namespace GameTemplate.Screens
             //draw rectangle to screen
             //e.Graphics.FillRectangle(heroBrush, drawX, drawY, 20, 20);
            e.Graphics.DrawImage(tank, drawX, drawY, 50, 50);
+            e.Graphics.DrawImage(tank2, drawXX, drawYY, 50, 50); 
         }
     }
 }
+#endregion
