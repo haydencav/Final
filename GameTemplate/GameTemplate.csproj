@@ -154,6 +154,30 @@
   <ItemGroup>
     <None Include="Resources\TankBest image.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TankBest image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player1 Down.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player1 right.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player1 Left.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TankBest image2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player1 Down1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player1 right1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player1 Left1.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
