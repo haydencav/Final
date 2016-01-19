@@ -209,11 +209,11 @@ namespace GameTemplate.Screens
         {
             #region main character movements
 
-            if (leftArrowDown == true)
+            if (leftArrowDown == true && (100 + drawX) > 0)
             {
                 drawX--;
             }
-            if (downArrowDown == true)
+            if (downArrowDown == true && (100 + drawY) < (this.Height - 30))
             {
                 drawY++;
             }
