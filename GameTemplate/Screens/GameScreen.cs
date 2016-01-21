@@ -23,10 +23,10 @@ namespace GameTemplate.Screens
         #region required global values - DO NOT CHANGE
 
         //player1 button control keys - DO NOT CHANGE
-        Boolean leftArrowDown, downArrowDown, rightArrowDown, upArrowDown, bDown, nDown, mDown, spaceDown;
-
+        Boolean leftArrowDown, downArrowDown, rightArrowDown, upArrowDown, bDown, nDown, mDown, spaceDown, Player1shoot;
+        
         //player2 button control keys - DO NOT CHANGE
-        Boolean aDown, sDown, dDown, wDown, cDown, vDown, xDown, zDown;
+        Boolean aDown, sDown, dDown, wDown, cDown, vDown, xDown, zDown, Player2shoot;
 
         #endregion
 
@@ -49,6 +49,8 @@ namespace GameTemplate.Screens
 
         int BX2 = -100;
         int BY2 = -100; 
+
+        
 
         //Graphics objects
         SolidBrush heroBrush = new SolidBrush(Color.Black);
@@ -258,12 +260,13 @@ namespace GameTemplate.Screens
 
             if(zDown== true)
             {
-                BX1 = drawX + 100;
-                BY1 = drawY + 100; 
+                BX1 = drawX + 50;
+                BY1 = drawY + 23;
+                Player1shoot = true; 
             }
-            if()
+            if(Player1shoot == true)
             {
-
+                BX1 += 5;
             }
 
 
