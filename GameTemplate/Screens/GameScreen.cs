@@ -36,15 +36,23 @@ namespace GameTemplate.Screens
         Image tank;
         Image tank2;
 
-        //initial starting points for black rectangle
+        //initial starting points for  P1 and P2 
         int drawX = 100;
         int drawY = 100;
 
         int drawXX = 500;
-        int drawYY = 500; 
+        int drawYY = 500;
+        
+        //Bullets 
+        int BX1 = -100;
+        int BY1 = -100;
+
+        int BX2 = -100;
+        int BY2 = -100; 
 
         //Graphics objects
         SolidBrush heroBrush = new SolidBrush(Color.Black);
+        SolidBrush BulletBrush = new SolidBrush(Color.Black);
 
         //----------------------------------------
 
@@ -209,37 +217,37 @@ namespace GameTemplate.Screens
         {
             #region main character movements
 
-            if (leftArrowDown == true)
+            if (leftArrowDown == true && drawX > 0)
             {
                 drawX--;
             }
-            if (downArrowDown == true)
+            if (downArrowDown == true && drawY < ScreenControl.controlHeight - 50) //&& (100 + drawY) < (this.Height - 30))
             {
                 drawY++;
             }
-            if (rightArrowDown == true)
+            if (rightArrowDown == true && drawX < ScreenControl.controlWidth - 50) 
             {
                 drawX++;
             }
-            if (upArrowDown == true)
+            if (upArrowDown == true && drawY > 0)
             {
                 drawY--;
             }
 
             //player 2 movements 
-            if (aDown == true)
+            if (aDown == true && drawXX > 0)
             {
                 drawXX--;
             }
-            if (sDown == true)
+            if (sDown == true && drawYY < ScreenControl.controlHeight - 50)
             {
                 drawYY++;
             }
-            if (dDown == true)
+            if (dDown == true && drawXX < ScreenControl.controlWidth - 50)
             {
                 drawXX++;
             }
-            if (wDown == true)
+            if (wDown == true && drawYY > 0)
             {
                 drawYY--;
             }
@@ -247,6 +255,16 @@ namespace GameTemplate.Screens
 
 
             #region collision detection - TO BE COMPLETED
+
+            if(zDown== true)
+            {
+                BX1 = drawX + 100;
+                BY1 = drawY + 100; 
+            }
+            if()
+            {
+
+            }
 
 
             #endregion
@@ -286,7 +304,9 @@ namespace GameTemplate.Screens
             //draw rectangle to screen
             //e.Graphics.FillRectangle(heroBrush, drawX, drawY, 20, 20);
            e.Graphics.DrawImage(tank, drawX, drawY, 50, 50);
-            e.Graphics.DrawImage(tank2, drawXX, drawYY, 50, 50); 
+            e.Graphics.DrawImage(tank2, drawXX, drawYY, 50, 50);
+            e.Graphics.FillEllipse(BulletBrush, BX1, BY1, 5, 5);
+            e.Graphics.FillEllipse(BulletBrush, BX2, BY2, 5, 5);
         }
     }
 }
