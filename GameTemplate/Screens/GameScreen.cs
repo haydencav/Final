@@ -46,6 +46,10 @@ namespace GameTemplate.Screens
         //Bullets 
         int BX1 = -100;
         int BY1 = -100;
+        string bDirection1 = "Left";
+        string bDriection2 = "Up";
+        string bDirection3 = "Right";
+        string bDirection4 = "Down"; 
 
         int BX2 = -100;
         int BY2 = -100; 
@@ -262,11 +266,20 @@ namespace GameTemplate.Screens
             {
                 BX1 = drawX + 50;
                 BY1 = drawY + 23;
+                //check to see what direction tank is facing and set direction string.
+                // eg. bDirection1 = "right";
                 Player1shoot = true; 
             }
             if(Player1shoot == true)
             {
-                BX1 += 5;
+                if (bDirection1 == "Right")
+                {
+                    BX1 += 5;
+                }
+                else if (bDriection2 == "Up")
+                {
+                    BY1 -= 5; 
+                } 
             }
 
 
