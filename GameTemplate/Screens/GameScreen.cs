@@ -36,6 +36,8 @@ namespace GameTemplate.Screens
         Image tank;
         Image tank2;
 
+        string tankDirection = "right"; 
+
         //initial starting points for  P1 and P2 
         int drawX = 100;
         int drawY = 100;
@@ -46,10 +48,10 @@ namespace GameTemplate.Screens
         //Bullets 
         int BX1 = -100;
         int BY1 = -100;
-        string bDirection1 = "Left";
-        string bDriection2 = "Up";
-        string bDirection3 = "Right";
-        string bDirection4 = "Down"; 
+        string bDirection1 = "";
+        //string bDriection2 = "Up";
+        //string bDirection3 = "Right";
+        //string bDirection4 = "Down"; 
 
         int BX2 = -100;
         int BY2 = -100; 
@@ -77,21 +79,25 @@ namespace GameTemplate.Screens
                     leftArrowDown = true;
                     
                     tank = Properties.Resources.Player1_Left;
+                    tankDirection = "left"; 
                     break;
                 case Keys.Down:
                     downArrowDown = true;
 
                     tank = Properties.Resources.Player1_Down;
+                    tankDirection = "down"; 
                     break;
                 case Keys.Right:
                     rightArrowDown = true;
 
                     tank = Properties.Resources.Player1_Right;
+                    tankDirection = "right"; 
                     break;
                 case Keys.Up:
                     upArrowDown = true;
 
                     tank = Properties.Resources.Player1;
+                    tankDirection = "up"; 
                     break;
                 case Keys.B:
                     bDown = true;
@@ -264,22 +270,60 @@ namespace GameTemplate.Screens
 
             if(zDown== true)
             {
-                BX1 = drawX + 50;
-                BY1 = drawY + 23;
+                BX1 = drawX + 25;
+                BY1 = drawY + 25;
                 //check to see what direction tank is facing and set direction string.
-                // eg. bDirection1 = "right";
+                
+                bDirection1 = tankDirection;
+               
+
                 Player1shoot = true; 
             }
-            if(Player1shoot == true)
+           
+
+
+            if (Player1shoot == true)
             {
-                if (bDirection1 == "Right")
+                if (bDirection1 == "right")
                 {
                     BX1 += 5;
                 }
-                else if (bDriection2 == "Up")
+                else if (bDirection1 == "up")
                 {
-                    BY1 -= 5; 
-                } 
+
+                    BY1 -= 5;
+                   
+                }
+                else if (bDirection1 == "left")
+                {
+
+                    BX1 -= 5; 
+                }
+                else if (bDirection1 == "down")
+                {
+
+                    BY1 += 5;
+                   if (tankDirection == "right")
+            {
+                BX1 = drawX + 50;   
+                BY1 = drawY + 23;
+            }
+            else if (tankDirection == "left")
+            {
+                BX1 = drawX + 0;
+                BY1 = drawY + 23;
+            }
+            else if (tankDirection == "down")
+            {
+                BX1 = drawX + 25;
+                BY1 = drawY + 50;
+            }
+            else if (tankDirection == "up")
+            {
+                BX1 = drawX + 23;
+                BY1 = drawY + 0;
+            }   
+                }
             }
 
 
