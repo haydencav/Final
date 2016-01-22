@@ -36,7 +36,8 @@ namespace GameTemplate.Screens
         Image tank;
         Image tank2;
 
-        string tankDirection = "right"; 
+        string tankDirection = "right";
+        string tankDirection2 = "up";
 
         //initial starting points for  P1 and P2 
         int drawX = 100;
@@ -49,7 +50,7 @@ namespace GameTemplate.Screens
         int BX1 = -100;
         int BY1 = -100;
         string bDirection1 = "";
-        //string bDriection2 = "Up";
+        string bDirection2 = "";
         //string bDirection3 = "Right";
         //string bDirection4 = "Down"; 
 
@@ -120,23 +121,23 @@ namespace GameTemplate.Screens
             {
                 case Keys.A:
                     aDown = true;
-
                     tank2 = Properties.Resources.Player2_Left;
+                    tankDirection2 = "left"; 
                     break;
                 case Keys.S:
                     sDown = true;
-
                     tank2 = Properties.Resources.Player2_Down;
+                    tankDirection2 = "down"; 
                     break;
                 case Keys.D:
                     dDown = true;
-
                     tank2 = Properties.Resources.Player2_Right;
+                    tankDirection2 = "right"; 
                     break;
                 case Keys.W:
                     wDown = true;
-
                     tank2 = Properties.Resources.Player2;
+                    tankDirection2 = "up"; 
                     break;
                 case Keys.C:
                     cDown = true;
@@ -237,7 +238,7 @@ namespace GameTemplate.Screens
             {
                 drawY++;
             }
-            if (rightArrowDown == true && drawX < ScreenControl.controlWidth - 50) 
+            if (rightArrowDown == true && drawX < ScreenControl.controlWidth - 50)
             {
                 drawX++;
             }
@@ -268,19 +269,64 @@ namespace GameTemplate.Screens
 
             #region collision detection - TO BE COMPLETED
 
-            if(zDown== true)
+            if (mDown == true)
             {
-                BX1 = drawX + 25;
-                BY1 = drawY + 25;
-                //check to see what direction tank is facing and set direction string.
-                
+                if (tankDirection == "right")
+                {
+                    BX1 = drawX + 50;
+                    BY1 = drawY + 23;
+                }
+                else if (tankDirection == "left")
+                {
+                    BX1 = drawX + 0;
+                    BY1 = drawY + 23;
+                }
+                else if (tankDirection == "down")
+                {
+                    BX1 = drawX + 25;
+                    BY1 = drawY + 50;
+                }
+                else if (tankDirection == "up")
+                {
+                    BX1 = drawX + 23;
+                    BY1 = drawY + 0;
+                }
+
                 bDirection1 = tankDirection;
-               
 
-                Player1shoot = true; 
+                Player1shoot = true;
+
             }
-           
 
+            ///player 2 
+            if (xDown == true)
+            {
+                if (tankDirection2 == "right")
+                {
+                    BX2 = drawXX + 50;
+                    BY2 = drawYY + 23;
+                }
+                else if (tankDirection2 == "left")
+                {
+                    BX2 = drawXX + 0;
+                    BY2 = drawYY + 23;
+                }
+                else if (tankDirection2 == "down")
+                {
+                    BX2 = drawXX + 25;
+                    BY2 = drawYY + 50;
+                }
+                else if (tankDirection2 == "up")
+                {
+                    BX2 = drawXX + 23;
+                    BY2 = drawYY + 0;
+                }
+                //check to see what direction tank is facing and set direction string.
+                bDirection2 = tankDirection2;
+
+                Player2shoot = true;
+
+            }
 
             if (Player1shoot == true)
             {
@@ -292,42 +338,53 @@ namespace GameTemplate.Screens
                 {
 
                     BY1 -= 5;
-                   
+
                 }
                 else if (bDirection1 == "left")
                 {
 
-                    BX1 -= 5; 
+                    BX1 -= 5;
                 }
                 else if (bDirection1 == "down")
                 {
 
                     BY1 += 5;
-                   if (tankDirection == "right")
-            {
-                BX1 = drawX + 50;   
-                BY1 = drawY + 23;
+
+                }
+
+
             }
-            else if (tankDirection == "left")
+
+            if (Player2shoot == true)
             {
-                BX1 = drawX + 0;
-                BY1 = drawY + 23;
-            }
-            else if (tankDirection == "down")
-            {
-                BX1 = drawX + 25;
-                BY1 = drawY + 50;
-            }
-            else if (tankDirection == "up")
-            {
-                BX1 = drawX + 23;
-                BY1 = drawY + 0;
-            }   
+                if (bDirection2 == "right")
+                {
+                    BX2 += 5;
+                }
+                else if (bDirection2 == "up")
+                {
+
+                    BY2 -= 5;
+
+                }
+                else if (bDirection2 == "left")
+                {
+
+                    BX2 -= 5;
+                }
+                else if (bDirection2 == "down")
+                {
+
+                    BY2 += 5;
+
+
                 }
             }
-
-
+        
             #endregion
+
+
+
 
 
             //refresh the screen, which causes the GameScreen_Paint method to run
@@ -363,7 +420,7 @@ namespace GameTemplate.Screens
         {
             //draw rectangle to screen
             //e.Graphics.FillRectangle(heroBrush, drawX, drawY, 20, 20);
-           e.Graphics.DrawImage(tank, drawX, drawY, 50, 50);
+            e.Graphics.DrawImage(tank, drawX, drawY, 50, 50);
             e.Graphics.DrawImage(tank2, drawXX, drawYY, 50, 50);
             e.Graphics.FillEllipse(BulletBrush, BX1, BY1, 5, 5);
             e.Graphics.FillEllipse(BulletBrush, BX2, BY2, 5, 5);
