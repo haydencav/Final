@@ -324,7 +324,7 @@ namespace GameTemplate.Screens
                 //check to see what direction tank is facing and set direction string.
                 bDirection2 = tankDirection2;
 
-                Player2shoot = true;
+                Player2shoot = true; 
 
             }
 
