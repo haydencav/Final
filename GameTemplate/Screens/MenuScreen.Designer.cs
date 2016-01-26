@@ -56,6 +56,7 @@
             // optionsButton
             // 
             this.optionsButton.BackColor = System.Drawing.Color.White;
+            this.optionsButton.Enabled = false;
             this.optionsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.optionsButton.Location = new System.Drawing.Point(32, 249);
             this.optionsButton.Margin = new System.Windows.Forms.Padding(2);
@@ -65,11 +66,13 @@
             this.optionsButton.Tag = "OptionsScreen";
             this.optionsButton.Text = "Options";
             this.optionsButton.UseVisualStyleBackColor = false;
+            this.optionsButton.Visible = false;
             this.optionsButton.Click += new System.EventHandler(this.optionsButton_Click);
             // 
             // scoresButton
             // 
             this.scoresButton.BackColor = System.Drawing.Color.White;
+            this.scoresButton.Enabled = false;
             this.scoresButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.scoresButton.Location = new System.Drawing.Point(32, 220);
             this.scoresButton.Margin = new System.Windows.Forms.Padding(2);
@@ -79,6 +82,7 @@
             this.scoresButton.Tag = "ScoreScreen";
             this.scoresButton.Text = "High Scores";
             this.scoresButton.UseVisualStyleBackColor = false;
+            this.scoresButton.Visible = false;
             this.scoresButton.Click += new System.EventHandler(this.scoresButton_Click);
             // 
             // playButton
