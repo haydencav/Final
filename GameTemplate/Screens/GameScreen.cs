@@ -38,6 +38,7 @@ namespace GameTemplate.Screens
 
         string tankDirection = "right";
         string tankDirection2 = "up";
+        string winScreen = ""; 
 
         //initial starting points for  P1 and P2 
         int drawX = 100;
@@ -221,6 +222,18 @@ namespace GameTemplate.Screens
             }
         }
 
+        double calculateDistance(int BX1, int BY1, int drawX, int drawY)//method to calculate distance in collision 
+        {
+            return ((Math.Sqrt(Math.Pow(BX1 - drawX, 2) + Math.Pow(BY1 - drawY, 2))));
+        } 
+        
+        
+        
+        
+        
+        
+        
+        
         /// <summary>
         /// All game update logic must be placed in this event method
         /// </summary>
@@ -380,15 +393,32 @@ namespace GameTemplate.Screens
 
                 }
             }
-        
-            #endregion
+
+            if (Math.Sqrt(Math.Pow(BX1 - drawXX - 25, 2) + Math.Pow(BY1 - drawYY - 25, 2)) < 25)
+            {
+                tank2 = Properties.Resources.explosion;
+                gameTimer.Enabled = false;
+                winScreen = "Player 1 Wins!!!";
+                winLabel.Text = winScreen; 
+
+                
+            }
+            else if (Math.Sqrt(Math.Pow(BX2 - drawX - 25, 2) + Math.Pow(BY2 - drawY - 25, 2)) < 25)
+            {
+                tank = Properties.Resources.explosion;
+                gameTimer.Enabled = false;
+                winScreen = "Player 2 Wins!!!";
+                winLabel.Text = winScreen;
+            }
+
+                #endregion
 
 
 
 
 
-            //refresh the screen, which causes the GameScreen_Paint method to run
-            Refresh();
+                //refresh the screen, which causes the GameScreen_Paint method to run
+                Refresh();
         }
 
         /// <summary>
@@ -418,8 +448,8 @@ namespace GameTemplate.Screens
         /// <param name="e"></param>
         private void GameScreen_Paint(object sender, PaintEventArgs e)
         {
-            //draw rectangle to screen
-            //e.Graphics.FillRectangle(heroBrush, drawX, drawY, 20, 20);
+            //draw player
+            
             e.Graphics.DrawImage(tank, drawX, drawY, 50, 50);
             e.Graphics.DrawImage(tank2, drawXX, drawYY, 50, 50);
             e.Graphics.FillEllipse(BulletBrush, BX1, BY1, 5, 5);
