@@ -178,6 +178,30 @@
   <ItemGroup>
     <None Include="Resources\Player1 Left1.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player1 down fixed image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player1 right fixed image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player1 left fixed image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player 2 Down fixed image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player 2 left fixed image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player 2 right fixed image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tank Firing-SoundBible.com-998264747 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bomb-SoundBible.com-891110113 %281%29.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

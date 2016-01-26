@@ -136,7 +136,7 @@
             this.Controls.Add(this.playButton);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MenuScreen";
-            this.Size = new System.Drawing.Size(326, 312);
+            this.Size = new System.Drawing.Size(486, 312);
             ((System.ComponentModel.ISupportInitialize)(this.gameTitle)).EndInit();
             this.ResumeLayout(false);
 

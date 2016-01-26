@@ -61,6 +61,15 @@ namespace GameTemplate.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Bomb_SoundBible_com_891110113__1_ {
+            get {
+                return ResourceManager.GetStream("Bomb_SoundBible_com_891110113__1_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Player1 {
@@ -137,6 +146,15 @@ namespace GameTemplate.Properties {
             get {
                 object obj = ResourceManager.GetObject("Player2_Right", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Tank_Firing_SoundBible_com_998264747__1_ {
+            get {
+                return ResourceManager.GetStream("Tank_Firing_SoundBible_com_998264747__1_", resourceCulture);
             }
         }
     }
